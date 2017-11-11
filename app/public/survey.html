@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Friend Survey</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<!-- <link rel="stylesheet" href="app/public/style.css"> -->
+	<style>
+		img{ width: 150px }
+		.btn-primary{margin-top: 10px}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h2>Survey Questions</h2>
+		<hr>
+
+		<div class="modal fade" id="myModal" role='dialog'>
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss='modal'>&times;</button>
+						<h4 class="modal-title">Your New Friend</h4>
+					</div>
+					<div class="modal-body">
+						<h1 id="friend"></h1>
+						<div id="imgdiv"></div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss='modal'>Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<form action="" id="profileForm">
+			<div class="form-group">
+				<label for="name">Name (required):</label>
+				<input type="text" class="form-control" id="name">
+			</div>
+			<div class="form-group">
+				<label for="photo">Link to Photo Image (required):</label>
+				<input type="text" class="form-control" id="photo">
+			</div>
+			<hr>
+			<h3>Question 1</h3>
+			<h4>I make friends easily.</h4>
+			<div class="btn-group">
+				<select name="" class="form-control" id="q1" input type='number'>
+					<option value="">Select an option</option>
+					<option value=1 input type ='number'>1 (strongly disagree)</option>
+					<option value=2 input type='number'>2</option>
+					<option value=3 input type='number'>3</option>
+					<option value=4 input type='number'>4</option>
+					<option value=5 input type ='number'>5 (strongly agree)</option>
+				</select>
+			</div>
+			<h3>Question 2</h3>
+			<h4>I worry about things often.</h4>
+			<div class="btn-group">
+				<select name="" class="form-control" id="q2" data-placeholder>
+					<option value="">Select an option</option>
+					<option value="1">1 (strongly disagree)</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5 (strongly agree)</option>
+				</select>
+			</div>
+			<h3>Question 3</h3>
+			<h4>I am always busy.</h4>
+			<div class="btn-group">
+				<select name="" class="form-control" id="q3" data-placeholder>
+					<option value="">Select an option</option>
+					<option value="1">1 (strongly disagree)</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5 (strongly agree)</option>
+				</select>
+			</div>
+			<h3>Question 4</h3>
+			<h4>I prefer variety to routine</h4>
+			<div class="btn-group">
+				<select name="" class="form-control" id="q4" data-placeholder>
+					<option value="">Select an option</option>
+					<option value="1">1 (strongly disagree)</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5 (strongly agree)</option>
+				</select>
+			</div>
+			<h3>Question 5</h3>
+			<h4>I like to solve complex problems.</h4>
+			<div class="btn-group">
+				<select name="" class="form-control" id="q5" data-placeholder>
+					<option value="">Select an option</option>
+					<option value="1">1 (strongly disagree)</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5 (strongly agree)</option>
+				</select>
+			</div>
+			<h3>Question 6</h3>
+			<h4>I dislike confrontation.</h4>
+			<div class="btn-group">
+				<select name="" class="form-control" id="q6" data-placeholder>
+					<option value="">Select an option</option>
+					<option value="1">1 (strongly disagree)</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5 (strongly agree)</option>
+				</select>
+			</div>
+			<h3>Question 7</h3>
+			<h4>I am prone to procrastination.</h4>
+			<div class="btn-group">
+				<select name="" class="form-control" id="q7" data-placeholder>
+					<option value="">Select an option</option>
+					<option value="1">1 (strongly disagree)</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5 (strongly agree)</option>
+				</select>
+			</div>
+			<h3>Question 8</h3>
+			<h4>I value cooperation over competition.</h4>
+			<div class="btn-group">
+				<select name="" class="form-control" id="q8" data-placeholder>
+					<option value="">Select an option</option>
+					<option value="1">1 (strongly disagree)</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5 (strongly agree)</option>
+				</select>
+			</div>
+			<h3>Question 9</h3>
+			<h4>I get stressed out easily.</h4>
+			<div class="btn-group">
+				<select name="" class="form-control" id="q9" data-placeholder>
+					<option value="">Select an option</option>
+					<option value="1">1 (strongly disagree)</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5 (strongly agree)</option>
+				</select>
+			</div>
+			<h3>Question 10</h3>
+			<h4>I experience my emotions intensely.</h4>
+			<div class="btn-group">
+				<select name="chosen" class="form-control" id="q10" data-placeholder>
+					<option value="">Select an option</option>
+					<option value="1">1 (strongly disagree)</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5 (strongly agree)</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<button type="submit" class="btn btn-default btn-primary" id="submit" data-toggle='modal' data-target='#myModal'>Submit</button>
+			</div>
+		</form>
+		<footer class="footer">
+			<div class="container">
+				<p><a href="/api/friends">API Friends List</a> | <a href="/">GitHub Repo</a></p>
+			</div>
+		</footer>
+	</div>
+
+
+<script>
+	//when the user hits the submit button our application pulls the information from the various form fields and stores it into a newProfile variable object
+	$('#submit').on('click', function(event){
+		event.preventDefault();
+
+			var one = parseInt($('#q1 :selected').val());
+			var two = parseInt($('#q2 :selected').val());
+			var three = parseInt($('#q3 :selected').val());
+			var four = parseInt($('#q4 :selected').val());
+			var five = parseInt($('#q5 :selected').val());
+			var six = parseInt($('#q6 :selected').val());
+			var seven = parseInt($('#q7 :selected').val());
+			var eight = parseInt($('#q8 :selected').val());
+			var nine = parseInt($('#q9 :selected').val());
+			var ten = parseInt($('#q10 :selected').val());
+
+	var newProfile = {
+			name: $('#name').val().trim(),
+			photo: $('#photo').val().trim(),
+			scores: [one, two, three, four, five, six, seven, eight, nine, ten]
+			}
+
+		//we then post that newProfile variable to our api/friends route so that it appears on the /api/friends page and is used in the comparison logic
+		$.ajax({
+			type: 'POST',
+			data: JSON.stringify(newProfile),
+			contentType: 'application/json',
+			url: 'api/friends'
+		})
+
+		//this is where the application retrieves the data defined in the apiRoutes comparison logic for our best match and displays our new best friend in the modal!
+		$.ajax({ url: '/api/friends', method: 'GET' })
+		.done(function(friendData){
+			
+				var bestMatch = friendData[1]
+				$("#friend").text(bestMatch.name)
+				$('#imgdiv').empty()
+				var img = $('<img id="profileImg">');
+				img.attr('src', bestMatch.photo)
+				img.attr({
+					src: bestMatch.photo,
+					alt: 'picture of ' + bestMatch.name, 
+				})
+				img.appendTo('#imgdiv')
+			
+		})
+
+		function reset(){
+			$("#name").val('');
+			$("#photo").val('');
+			$("#q1").val('');
+			$("#q2").val('');
+			$("#q3").val('');
+			$("#q4").val('');
+			$("#q5").val('');
+			$("#q6").val('');
+			$("#q7").val('');
+			$("#q8").val('');
+			$("#q9").val('');
+			$("#q10").val('');
+		}
+		reset();
+
+	});
+
+
+</script>
+
+
+
+</body>
+</html>
